@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Emergency Ride Booking</title>
+    <link rel="stylesheet" href="c:\HTML\prcode1.css">
+</head>
+<body>
+
+    <!-- Login Page -->
+    <div id="login-page">
+        <header>
+            <h1>Emergency Ride & Vehicle Assistance</h1>
+            <p>Log in to book your ride and vehicle assistance service.</p>
+        </header>
+
+        <section class="login-section">
+            <h2>Login</h2>
+            <form id="login-form" onsubmit="login(event)">
+                <label for="username">Username:</label>
+                <input type="text" id="username" name="username" required>
+
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" required>
+                <br>
+                <input type="submit" value="Login">
+            </form>
+            <div class="login-links">
+                <p><a href="#">Forgot Password?</a></p>
+                <p><a href="#">Don't have an account? Register here</a></p>
+            </div>
+        </section>
+    </div>
+
+    <!-- Booking Page (Initially Hidden) -->
+    <div id="booking-page" style="display: none;">
+        <header>
+            <h1>Emergency Ride & Vehicle Assistance</h1>
+            <p>Stuck in traffic or car breakdown? Book our dual rider service to get you and your vehicle to the desired location.</p>
+        </header>
+
+        <section class="booking-section">
+            <h2>Book Your Service</h2>
+            <form id="booking-form" action="#" method="post" class="booking-form">
+                <label for="name">Your Name:</label>
+                <input type="text" id="name" name="name" required>
+
+                <label for="phone">Phone Number:</label>
+                <input type="tel" id="phone" name="phone" required>
+
+                <label for="pickup-location">Pick-Up Location:</label>
+                <input type="text" id="pickup-location" name="pickup-location" required>
+
+                <label for="alternate-pickup-location">Alternate Pick-Up Location (optional):</label>
+                <input type="text" id="alternate-pickup-location" name="alternate-pickup-location">
+
+                <label for="drop-location">Drop-Off Location:</label>
+                <input type="text" id="drop-location" name="drop-location" required>
+
+                <label for="alternate-drop-location">Alternate Drop-Off Location (optional):</label>
+                <input type="text" id="alternate-drop-location" name="alternate-drop-location">
+
+                <label for="vehicle-type">Vehicle Type:</label>
+                <select id="vehicle-type" name="vehicle-type" required>
+                    <option value="car">Car</option>
+                    <option value="bike">Bike</option>
+                    <option value="truck">Truck</option>
+                </select>
+
+                <label for="issue">Issue:</label>
+                <select id="issue" name="issue" required>
+                    <option value="traffic">Stuck in Traffic</option>
+                    <option value="breakdown">Vehicle Breakdown</option>
+                </select>
+
+                <input type="submit" value="Book Now">
+            </form>
+        </section>
+
+        <footer>
+            <p>&copy; 2024 Emergency Ride Service. All rights reserved.</p>
+        </footer>
+    </div>
+
+    <script>
+        // Function to handle the login process (without backend)
+        function login(event) {
+            event.preventDefault();  // Prevent form from submitting
+            const loginPage = document.getElementById('login-page');
+            const bookingPage = document.getElementById('booking-page');
+            loginPage.style.display = 'none';  // Hide login page
+            bookingPage.style.display = 'block';  // Show booking page
+        }
+    </script>
+
+</body>
+</html>
